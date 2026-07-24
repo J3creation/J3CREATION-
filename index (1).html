@@ -1,0 +1,1012 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>J3 Creation | Designs &amp; Ads That Bring Customers</title>
+<meta name="description" content="J3 Creation helps businesses get seen, trusted and chosen through poster designs, Meta Ads and Google Ads campaigns.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@700&family=Plus+Jakarta+Sans:wght@400;500;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  /* ===================== Design Tokens ===================== */
+  :root{
+    --purple:#712ae2;
+    --purple-dark:#5c22bb;
+    --orange:#eb6905;
+    --ink:#091426;
+    --body:#45474c;
+    --muted:#8590a6;
+    --border:#c5c6cd;
+    --brown:#ac7f5e;
+    --bg-soft:#f8f9ff;
+    --achieve-bg:rgba(239,244,255,0.5);
+    --faq-bg:#e5eeff;
+    --footer-bg:#091426;
+
+    --font-display:'Plus Jakarta Sans', sans-serif;
+    --font-body:'Inter', sans-serif;
+    --font-mono:'JetBrains Mono', monospace;
+
+    --radius-lg:24px;
+    --radius-md:16px;
+    --radius-sm:12px;
+    --container:1280px;
+  }
+
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0;
+    font-family:var(--font-body);
+    color:var(--body);
+    background:
+      linear-gradient(90deg, var(--bg-soft) 0%, var(--bg-soft) 100%),
+      linear-gradient(90deg, #ffffff 0%, #ffffff 100%);
+    -webkit-font-smoothing:antialiased;
+    overflow-x:hidden;
+  }
+  img{max-width:100%;display:block;}
+  a{color:inherit;text-decoration:none;}
+  button{font-family:inherit;cursor:pointer;}
+  ul{list-style:none;margin:0;padding:0;}
+  h1,h2,h3,h4,p{margin:0;}
+  .container{
+    max-width:var(--container);
+    margin:0 auto;
+    padding:0 24px;
+  }
+  :focus-visible{
+    outline:2px solid var(--purple);
+    outline-offset:2px;
+  }
+  @media (prefers-reduced-motion: reduce){
+    *{animation-duration:0.01ms !important; animation-iteration-count:1 !important; transition-duration:0.01ms !important; scroll-behavior:auto !important;}
+  }
+
+  /* ===================== Header / NavBar ===================== */
+  .site-header{
+    position:sticky;
+    top:0;
+    z-index:100;
+    background:rgba(248,249,255,0.8);
+    backdrop-filter:blur(12px);
+    -webkit-backdrop-filter:blur(12px);
+    border-bottom:1px solid rgba(106,137,167,0.1);
+    box-shadow:0 1px 2px 0 rgba(113,42,226,0.05);
+  }
+  .nav{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    padding:16px 24px;
+    max-width:var(--container);
+    margin:0 auto;
+  }
+  .logo{
+    font-family:var(--font-display);
+    font-weight:800;
+    font-size:20px;
+    color:var(--ink);
+  }
+  .nav-links{
+    display:none;
+    gap:32px;
+    align-items:center;
+  }
+  .nav-links a{
+    font-weight:400;
+    font-size:16px;
+    color:var(--body);
+    padding-bottom:2px;
+    transition:color .2s ease;
+  }
+  .nav-links a:hover{ color:var(--purple); }
+  .nav-links a.active{
+    color:var(--purple);
+    font-weight:700;
+    border-bottom:2px solid var(--purple);
+  }
+  .btn{
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    gap:8px;
+    font-family:var(--font-body);
+    font-weight:700;
+    border:none;
+    cursor:pointer;
+    transition:transform .18s ease, box-shadow .18s ease, background-color .18s ease;
+  }
+  .btn:active{ transform:translateY(1px); }
+  .btn-primary{
+    background:var(--purple);
+    color:#fff;
+    border-radius:9999px;
+    padding:10px 24px;
+    font-size:15px;
+    box-shadow:0 10px 15px -3px rgba(113,42,226,0.2), 0 4px 6px -4px rgba(113,42,226,0.2);
+  }
+  .btn-primary:hover{ background:var(--purple-dark); box-shadow:0 14px 20px -3px rgba(113,42,226,0.3), 0 6px 8px -4px rgba(113,42,226,0.3); }
+  .nav-cta{ display:none; }
+  .nav-toggle{
+    display:flex;
+    background:none;
+    border:none;
+    padding:6px;
+  }
+  .nav-toggle svg{ width:26px; height:26px; color:var(--ink); }
+  .mobile-menu{
+    max-height:0;
+    overflow:hidden;
+    background:rgba(248,249,255,0.98);
+    transition:max-height .3s ease;
+  }
+  .mobile-menu.open{ max-height:360px; }
+  .mobile-menu ul{ display:flex; flex-direction:column; padding:8px 24px 20px; gap:4px;}
+  .mobile-menu a{
+    padding:12px 0;
+    font-size:16px;
+    border-bottom:1px solid rgba(106,137,167,0.15);
+  }
+  .mobile-menu a.active{ color:var(--purple); font-weight:700; }
+  .mobile-menu .btn-primary{ margin-top:12px; width:100%; padding:14px 24px; }
+
+  @media (min-width: 900px){
+    .nav-links{ display:flex; }
+    .nav-cta{ display:inline-flex; }
+    .nav-toggle{ display:none; }
+    .mobile-menu{ display:none; }
+  }
+
+  /* ===================== Hero ===================== */
+  .hero{
+    padding:64px 0 96px;
+    position:relative;
+    overflow:hidden;
+  }
+  .hero .container{
+    display:flex;
+    flex-direction:column;
+    gap:48px;
+    align-items:center;
+  }
+  .hero-copy{ flex:1 1 0; min-width:0; width:100%; }
+  .hero-copy h1{
+    font-family:var(--font-display);
+    font-weight:500;
+    font-size:clamp(28px, 5vw, 40px);
+    line-height:1.25;
+    color:var(--ink);
+  }
+  .hero-copy h1 .accent{ color:var(--purple); }
+  .hero-copy p.lead{
+    margin-top:24px;
+    font-size:16px;
+    line-height:1.5;
+    color:var(--body);
+    max-width:576px;
+  }
+  .hero-actions{
+    display:flex;
+    flex-wrap:wrap;
+    gap:16px;
+    margin-top:32px;
+  }
+  .btn-lg{ font-size:18px; padding:18px 32px; border-radius:12px; }
+  .btn-outline{
+    background:transparent;
+    color:var(--purple);
+    border:2px solid var(--purple);
+    border-radius:12px;
+    padding:16px 32px;
+  }
+  .btn-outline:hover{ background:rgba(113,42,226,0.06); }
+  .btn-primary.btn-lg{
+    box-shadow:0 20px 25px -5px rgba(113,42,226,0.3), 0 8px 10px -6px rgba(113,42,226,0.3);
+  }
+
+  .hero-visual{
+    flex:1 1 0;
+    min-width:0;
+    width:100%;
+    position:relative;
+  }
+  .hero-visual .blob{
+    position:absolute;
+    border-radius:9999px;
+    filter:blur(32px);
+    z-index:0;
+  }
+  .blob-orange{ width:128px; height:128px; background:rgba(235,105,5,0.1); top:-24px; right:-24px; }
+  .blob-purple{ width:192px; height:192px; background:rgba(113,42,226,0.1); bottom:-40px; left:-40px; }
+  .hero-card{
+    position:relative;
+    z-index:1;
+    background:rgba(255,255,255,0.75);
+    backdrop-filter:blur(10px);
+    -webkit-backdrop-filter:blur(10px);
+    border:1px solid rgba(255,255,255,0.6);
+    border-radius:var(--radius-lg);
+    padding:17px;
+    box-shadow:0 25px 50px -12px rgba(0,0,0,0.25);
+  }
+  .hero-card svg{ width:100%; height:auto; border-radius:16px; display:block; }
+
+  @media (min-width: 900px){
+    .hero .container{ flex-direction:row; align-items:center; gap:64px; }
+    .hero-copy{ text-align:left; }
+  }
+
+  /* ===================== Achievement / Expertise Section ===================== */
+  .expertise{
+    background:var(--achieve-bg);
+    padding:80px 0;
+  }
+  .expertise .heading-block{
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    gap:16px;
+    text-align:center;
+    max-width:672px;
+    margin:0 auto 64px;
+  }
+  .eyebrow{
+    font-family:var(--font-mono);
+    font-weight:700;
+    font-size:14px;
+    letter-spacing:1.6px;
+    text-transform:uppercase;
+    color:var(--purple);
+  }
+  .expertise h2, .faq h2, .lead-copy h2{
+    font-family:var(--font-display);
+    font-weight:500;
+    font-size:clamp(24px, 4vw, 32px);
+    color:var(--ink);
+    line-height:1.3;
+  }
+  .expertise p.sub, .faq p.sub{
+    font-size:16px;
+    line-height:1.5;
+    color:var(--body);
+  }
+  .card-grid{
+    display:grid;
+    grid-template-columns:1fr;
+    gap:32px;
+  }
+  @media (min-width:700px){
+    .card-grid{ grid-template-columns:repeat(2, 1fr); }
+  }
+  @media (min-width:1000px){
+    .card-grid{ grid-template-columns:repeat(3, 1fr); }
+  }
+  .card{
+    background:rgba(255,255,255,0.75);
+    backdrop-filter:blur(10px);
+    -webkit-backdrop-filter:blur(10px);
+    border:1px solid rgba(255,255,255,0.5);
+    border-radius:var(--radius-md);
+    padding:33px;
+    display:flex;
+    flex-direction:column;
+    gap:16px;
+    transition:transform .25s ease, box-shadow .25s ease;
+  }
+  .card:hover{
+    transform:translateY(-6px);
+    box-shadow:0 20px 30px -10px rgba(9,20,38,0.12);
+  }
+  .card-icon{
+    width:56px;
+    height:56px;
+    border-radius:12px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+  }
+  .card-icon.icon-purple{ background:rgba(113,42,226,0.1); color:var(--purple); }
+  .card-icon.icon-orange{ background:rgba(235,105,5,0.1); color:var(--orange); }
+  .card-icon.icon-ink{ background:rgba(9,20,38,0.1); color:var(--ink); }
+  .card-icon svg{ width:26px; height:26px; }
+  .card h3{
+    font-family:var(--font-display);
+    font-weight:500;
+    font-size:18px;
+    color:var(--ink);
+  }
+  .card p{
+    font-size:15px;
+    line-height:1.55;
+    color:var(--body);
+  }
+
+  /* ===================== Lead Form Section ===================== */
+  .lead-section{
+    padding:80px 0;
+  }
+  .lead-grid{
+    display:grid;
+    grid-template-columns:1fr;
+    gap:48px;
+    align-items:center;
+  }
+  @media (min-width:1000px){
+    .lead-grid{ grid-template-columns:2fr 3fr; gap:64px; }
+  }
+  .lead-copy h2{ margin-bottom:8px; }
+  .lead-copy p.sub{
+    margin-top:8px;
+    font-size:16px;
+    line-height:1.5;
+  }
+  .lead-feature{
+    display:flex;
+    align-items:center;
+    gap:16px;
+    margin-top:16px;
+  }
+  .lead-feature svg{
+    width:20px;
+    height:20px;
+    color:var(--purple);
+    flex-shrink:0;
+  }
+  .lead-feature span{
+    font-weight:600;
+    font-size:16px;
+    color:var(--brown);
+  }
+
+  .lead-form{
+    position:relative;
+    background:rgba(255,255,255,0.75);
+    backdrop-filter:blur(10px);
+    -webkit-backdrop-filter:blur(10px);
+    border:1px solid rgba(255,255,255,0.6);
+    border-radius:var(--radius-lg);
+    box-shadow:0 25px 50px -12px rgba(0,0,0,0.25);
+    padding:32px;
+  }
+  @media (min-width:640px){ .lead-form{ padding:41px; } }
+
+  .form-row{
+    display:grid;
+    grid-template-columns:1fr;
+    gap:24px;
+    margin-bottom:24px;
+  }
+  @media (min-width:640px){
+    .form-row{ grid-template-columns:1fr 1fr; }
+  }
+  .field{ display:flex; flex-direction:column; gap:8px; }
+  .field:last-child{ margin-bottom:0; }
+  .field label{
+    font-size:14px;
+    font-weight:600;
+    color:var(--ink);
+  }
+  .field input,
+  .field select,
+  .field textarea{
+    font-family:var(--font-body);
+    font-size:16px;
+    color:var(--ink);
+    background:rgba(255,255,255,0.5);
+    border:1px solid var(--border);
+    border-radius:var(--radius-sm);
+    padding:15px 17px;
+    width:100%;
+    transition:border-color .18s ease, box-shadow .18s ease;
+  }
+  .field input::placeholder,
+  .field textarea::placeholder{ color:#6b7280; }
+  .field select{ color:var(--brown); appearance:none; -webkit-appearance:none;
+    background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23ac7f5e' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><polyline points='6 9 12 15 18 9'/></svg>");
+    background-repeat:no-repeat;
+    background-position:right 14px center;
+    background-size:20px;
+    padding-right:44px;
+  }
+  .field textarea{ resize:vertical; min-height:110px; }
+  .field input:focus, .field select:focus, .field textarea:focus{
+    outline:none;
+    border-color:var(--purple);
+    box-shadow:0 0 0 3px rgba(113,42,226,0.15);
+  }
+  .field-full{ margin-bottom:24px; }
+
+  .submit-btn{
+    width:100%;
+    background:var(--purple);
+    color:#fff;
+    font-size:18px;
+    font-weight:700;
+    padding:16px;
+    border-radius:12px;
+    box-shadow:0 10px 15px -3px rgba(113,42,226,0.2), 0 4px 6px -4px rgba(113,42,226,0.2);
+  }
+  .submit-btn:hover{ background:var(--purple-dark); }
+  .submit-btn:disabled{ opacity:0.7; cursor:not-allowed; }
+
+  .form-message{
+    margin-top:16px;
+    padding:14px 16px;
+    border-radius:10px;
+    font-size:14px;
+    font-weight:600;
+    display:none;
+  }
+  .form-message.show{ display:block; }
+  .form-message.success{ background:rgba(34,197,94,0.12); color:#15803d; border:1px solid rgba(34,197,94,0.3); }
+  .form-message.error{ background:rgba(239,68,68,0.12); color:#b91c1c; border:1px solid rgba(239,68,68,0.3); }
+
+  /* ===================== FAQ ===================== */
+  .faq{
+    background:var(--faq-bg);
+    padding:80px 24px;
+  }
+  .faq-inner{ max-width:768px; margin:0 auto; }
+  .faq .heading-block{
+    display:flex;
+    flex-direction:column;
+    gap:16px;
+    align-items:center;
+    text-align:center;
+    margin-bottom:64px;
+  }
+  .faq-list{ display:flex; flex-direction:column; gap:16px; }
+  .faq-item{
+    background:#fff;
+    border:1px solid rgba(197,198,205,0.3);
+    border-radius:var(--radius-md);
+    overflow:hidden;
+  }
+  .faq-question{
+    width:100%;
+    background:none;
+    border:none;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:16px;
+    padding:24px 32px;
+    text-align:left;
+  }
+  .faq-question h3{
+    font-family:var(--font-body);
+    font-weight:700;
+    font-size:17px;
+    color:var(--ink);
+  }
+  .faq-question svg{
+    width:14px;
+    height:14px;
+    flex-shrink:0;
+    color:var(--ink);
+    transition:transform .25s ease;
+  }
+  .faq-item.open .faq-question svg{ transform:rotate(180deg); }
+  .faq-answer{
+    max-height:0;
+    overflow:hidden;
+    transition:max-height .3s ease;
+  }
+  .faq-answer p{
+    padding:0 32px 24px;
+    font-size:15px;
+    line-height:1.6;
+    color:var(--body);
+  }
+
+  /* ===================== Footer ===================== */
+  .site-footer{
+    background:var(--footer-bg);
+    border-top:1px solid rgba(255,255,255,0.05);
+    border-radius:12px 12px 0 0;
+    padding:80px 0 40px;
+  }
+  .footer-grid{
+    display:grid;
+    grid-template-columns:1fr;
+    gap:40px;
+  }
+  @media (min-width:700px){
+    .footer-grid{ grid-template-columns:1fr 1fr; }
+  }
+  @media (min-width:1000px){
+    .footer-grid{ grid-template-columns:1.3fr 1fr 1fr 1.2fr; gap:24px; }
+  }
+  .footer-brand h4{
+    font-family:var(--font-display);
+    font-weight:700;
+    font-size:18px;
+    color:#fff;
+    margin-bottom:16px;
+  }
+  .footer-brand p{ color:var(--muted); font-size:15px; line-height:1.6; }
+  .footer-col h4{
+    font-weight:700;
+    font-size:16px;
+    color:#fff;
+    margin-bottom:20px;
+  }
+  .footer-col ul{ display:flex; flex-direction:column; gap:12px; }
+  .footer-col a{ color:var(--muted); font-size:15px; transition:color .18s ease; }
+  .footer-col a:hover{ color:#fff; }
+  .subscribe-row{
+    display:flex;
+    gap:8px;
+    margin-bottom:16px;
+  }
+  .subscribe-row input{
+    flex:1;
+    min-width:0;
+    background:rgba(255,255,255,0.1);
+    border:none;
+    border-radius:8px;
+    padding:13px 12px;
+    color:#fff;
+    font-size:15px;
+  }
+  .subscribe-row input::placeholder{ color:#c5c6cd; }
+  .subscribe-row button{
+    background:var(--purple);
+    border:none;
+    border-radius:8px;
+    padding:0 16px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+  }
+  .subscribe-row button svg{ width:18px; height:18px; color:#fff; }
+  .footer-bottom{
+    color:var(--muted);
+    font-size:13px;
+    letter-spacing:0.5px;
+    text-transform:uppercase;
+    line-height:1.6;
+  }
+</style>
+</head>
+<body>
+
+<!-- ===================== Header ===================== -->
+<header class="site-header">
+  <nav class="nav">
+    <div class="logo">J3 Creation</div>
+    <div class="nav-links">
+      <a href="#hero" class="active">Home</a>
+      <a href="#services">Services</a>
+      <a href="#portfolio">Portfolio</a>
+      <a href="#testimonials">Testimonials</a>
+      <a href="#contact">Contact</a>
+    </div>
+    <a href="#lead-form" class="btn btn-primary nav-cta">Book a Free Consultation</a>
+    <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false" id="navToggle">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+    </button>
+  </nav>
+  <div class="mobile-menu" id="mobileMenu">
+    <ul>
+      <li><a href="#hero" class="active">Home</a></li>
+      <li><a href="#services">Services</a></li>
+      <li><a href="#portfolio">Portfolio</a></li>
+      <li><a href="#testimonials">Testimonials</a></li>
+      <li><a href="#contact">Contact</a></li>
+      <li><a href="#lead-form" class="btn btn-primary">Book a Free Consultation</a></li>
+    </ul>
+  </div>
+</header>
+
+<!-- ===================== Hero ===================== -->
+<section class="hero" id="hero">
+  <div class="container">
+    <div class="hero-copy">
+      <h1>Grow Your Business With <span class="accent">Designs &amp; Ads</span> That Actually Bring Customers</h1>
+      <p class="lead">Your business deserves more than just likes and views. At J3 Creation, we help businesses attract the right audience through eye-catching poster designs, high-converting Meta Ads, and result-driven Google Ads.</p>
+      <div class="hero-actions">
+        <a href="#lead-form" class="btn btn-primary btn-lg">Book a Free Consultation</a>
+        <a href="#services" class="btn btn-outline btn-lg">Get Started Today</a>
+      </div>
+    </div>
+    <div class="hero-visual">
+      <span class="blob blob-orange" aria-hidden="true"></span>
+      <span class="blob blob-purple" aria-hidden="true"></span>
+      <div class="hero-card">
+        <svg viewBox="0 0 550 300" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Marketing performance dashboard preview">
+          <defs>
+            <linearGradient id="dashBg" x1="0" y1="0" x2="1" y2="1">
+              <stop offset="0%" stop-color="#f3edff"/>
+              <stop offset="100%" stop-color="#eaf1ff"/>
+            </linearGradient>
+            <linearGradient id="barGrad" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0%" stop-color="#8f4bee"/>
+              <stop offset="100%" stop-color="#712ae2"/>
+            </linearGradient>
+          </defs>
+          <rect width="550" height="300" rx="16" fill="url(#dashBg)"/>
+          <rect x="20" y="20" width="150" height="16" rx="4" fill="#091426" opacity="0.85"/>
+          <rect x="20" y="44" width="90" height="10" rx="4" fill="#45474c" opacity="0.5"/>
+          <rect x="430" y="22" width="100" height="28" rx="14" fill="#712ae2"/>
+          <rect x="20" y="72" width="160" height="90" rx="12" fill="#ffffff" opacity="0.9"/>
+          <rect x="196" y="72" width="160" height="90" rx="12" fill="#ffffff" opacity="0.9"/>
+          <rect x="372" y="72" width="158" height="90" rx="12" fill="#ffffff" opacity="0.9"/>
+          <rect x="36" y="90" width="60" height="8" rx="4" fill="#8590a6"/>
+          <rect x="36" y="106" width="80" height="16" rx="4" fill="#712ae2"/>
+          <rect x="212" y="90" width="60" height="8" rx="4" fill="#8590a6"/>
+          <rect x="212" y="106" width="80" height="16" rx="4" fill="#eb6905"/>
+          <rect x="388" y="90" width="60" height="8" rx="4" fill="#8590a6"/>
+          <rect x="388" y="106" width="80" height="16" rx="4" fill="#091426"/>
+          <rect x="20" y="176" width="510" height="104" rx="12" fill="#ffffff" opacity="0.9"/>
+          <rect x="40" y="230" width="24" height="34" rx="3" fill="url(#barGrad)"/>
+          <rect x="76" y="215" width="24" height="49" rx="3" fill="url(#barGrad)"/>
+          <rect x="112" y="240" width="24" height="24" rx="3" fill="url(#barGrad)"/>
+          <rect x="148" y="200" width="24" height="64" rx="3" fill="url(#barGrad)"/>
+          <rect x="184" y="222" width="24" height="42" rx="3" fill="url(#barGrad)"/>
+          <rect x="220" y="192" width="24" height="72" rx="3" fill="url(#barGrad)"/>
+          <polyline points="270,250 305,220 340,232 375,205 410,214 445,196 480,206" fill="none" stroke="#eb6905" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+          <circle cx="480" cy="206" r="5" fill="#eb6905"/>
+        </svg>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== Expertise / Achievement ===================== -->
+<section class="expertise" id="services">
+  <div class="container">
+    <div class="heading-block">
+      <span class="eyebrow">Our Expertise</span>
+      <h2>Helping Businesses Get Seen, Trusted &amp; Chosen</h2>
+      <p class="sub">We don't just create designs—we create opportunities for businesses to grow through a fusion of strategic creativity and data-driven marketing.</p>
+    </div>
+
+    <div class="card-grid">
+      <article class="card">
+        <div class="card-icon icon-purple">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20h9"/><path d="M16.5 3.5a2.12 2.12 0 0 1 3 3L7 19l-4 1 1-4Z"/></svg>
+        </div>
+        <h3>Professional Poster Designs</h3>
+        <p>Elevate your brand with custom-crafted visuals designed to stop the scroll and communicate your message instantly.</p>
+      </article>
+
+      <article class="card">
+        <div class="card-icon icon-orange">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 11 18 4v16L3 13z"/><path d="M3 11v2a3 3 0 0 0 3 3h1"/></svg>
+        </div>
+        <h3>Strategic Meta Ads</h3>
+        <p>Targeted Facebook and Instagram campaigns that turn prospects into loyal customers using precision data.</p>
+      </article>
+
+      <article class="card">
+        <div class="card-icon icon-ink">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+        </div>
+        <h3>Google Ads Campaigns</h3>
+        <p>Be found when it matters most. We manage high-intent search campaigns that drive immediate business results.</p>
+      </article>
+
+      <article class="card">
+        <div class="card-icon icon-purple">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg>
+        </div>
+        <h3>Customized Marketing Solutions</h3>
+        <p>Every business is unique. We build tailored roadmaps that align perfectly with your specific growth goals.</p>
+      </article>
+
+      <article class="card">
+        <div class="card-icon icon-orange">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10Z"/></svg>
+        </div>
+        <h3>End-to-End Support</h3>
+        <p>From initial concept to final optimization, we are your dedicated partners in sustainable business growth.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== Lead Form ===================== -->
+<section class="lead-section" id="lead-form">
+  <div class="container">
+    <div class="lead-grid">
+      <div class="lead-copy">
+        <h2>Ready To Bring More Customers To Your Business?</h2>
+        <p class="sub">Fill out the form to secure your free strategy session. We'll analyze your current brand presence and provide a roadmap for scaling your business.</p>
+
+        <div class="lead-feature">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+          <span>100% Free Consultation</span>
+        </div>
+        <div class="lead-feature">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+          <span>Custom Growth Strategy</span>
+        </div>
+      </div>
+
+      <form class="lead-form" id="leadForm" novalidate>
+        <div class="field field-full">
+          <label for="name">Full Name</label>
+          <input type="text" id="name" name="name" placeholder="John Doe" autocomplete="name" required>
+        </div>
+
+        <div class="field field-full">
+          <label for="phone">Phone Number</label>
+          <input type="tel" id="phone" name="phone" placeholder="+1 (555) 000-0000" autocomplete="tel" required>
+        </div>
+
+        <div class="field field-full">
+          <label for="location">Location</label>
+          <input type="text" id="location" name="location" placeholder="City, State" autocomplete="address-level2" required>
+        </div>
+
+        <div class="field field-full">
+          <label for="service">Service Needed</label>
+          <select id="service" name="service" required>
+            <option value="" disabled selected>Select a service</option>
+            <option value="Poster Design">Poster Design</option>
+            <option value="Social Media Post Design">Social Media Post Design</option>
+            <option value="Meta Ads Management">Meta Ads Management</option>
+            <option value="Google Ads Management">Google Ads Management</option>
+            <option value="Branding & Marketing Creatives">Branding &amp; Marketing Creatives</option>
+            <option value="Custom Growth Strategy">Custom Growth Strategy</option>
+          </select>
+        </div>
+
+        <div class="field field-full">
+          <label for="message">Message</label>
+          <textarea id="message" name="message" placeholder="How can we help you scale?" rows="4"></textarea>
+        </div>
+
+        <button type="submit" class="submit-btn" id="submitBtn">Get My Free Consultation</button>
+
+        <div class="form-message success" id="successMsg" role="status">Thanks! Your request has been received — we'll be in touch shortly.</div>
+        <div class="form-message error" id="errorMsg" role="alert">Something went wrong sending your request. Please try again.</div>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== FAQ ===================== -->
+<section class="faq" id="faq">
+  <div class="faq-inner">
+    <div class="heading-block">
+      <h2>Frequently Asked Questions</h2>
+      <p class="sub">Everything you need to know about partnering with J3 Creation.</p>
+    </div>
+
+    <div class="faq-list">
+      <div class="faq-item">
+        <button class="faq-question" aria-expanded="false">
+          <h3>What services does J3 Creation offer?</h3>
+          <svg viewBox="0 0 12 8" fill="none"><path d="M1 1l5 5 5-5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </button>
+        <div class="faq-answer">
+          <p>We offer poster design, social media post design, Meta Ads management, Google Ads management, and branding &amp; marketing creatives — everything you need to attract and convert customers.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question" aria-expanded="false">
+          <h3>How long does it take to see results from ads?</h3>
+          <svg viewBox="0 0 12 8" fill="none"><path d="M1 1l5 5 5-5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </button>
+        <div class="faq-answer">
+          <p>Most campaigns start showing meaningful traction within 2–4 weeks, and we continuously optimize targeting, creative, and budget every week to keep improving performance.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question" aria-expanded="false">
+          <h3>Do you work with small businesses?</h3>
+          <svg viewBox="0 0 12 8" fill="none"><path d="M1 1l5 5 5-5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </button>
+        <div class="faq-answer">
+          <p>Absolutely. We work with businesses of every size and tailor a growth plan and budget that fits your goals, whether you're just starting out or scaling further.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question" aria-expanded="false">
+          <h3>What is your design process like?</h3>
+          <svg viewBox="0 0 12 8" fill="none"><path d="M1 1l5 5 5-5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </button>
+        <div class="faq-answer">
+          <p>We start with discovery to understand your brand, move into concept and drafts, gather your feedback, refine the direction, and deliver polished final assets ready to launch.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question" aria-expanded="false">
+          <h3>How do you measure success?</h3>
+          <svg viewBox="0 0 12 8" fill="none"><path d="M1 1l5 5 5-5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </button>
+        <div class="faq-answer">
+          <p>We track click-through rate, cost per lead, conversion rate, and return on ad spend, and share clear monthly reporting so you always know how your investment is performing.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question" aria-expanded="false">
+          <h3>Is the consultation really free?</h3>
+          <svg viewBox="0 0 12 8" fill="none"><path d="M1 1l5 5 5-5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </button>
+        <div class="faq-answer">
+          <p>Yes — completely free, with no obligation and no hidden fees. We'll review your current presence and outline a roadmap whether or not you decide to work with us.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== Footer ===================== -->
+<footer class="site-footer" id="contact">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <h4>J3 Creation</h4>
+        <p>Empowering businesses through cutting-edge design and performance marketing strategies.</p>
+      </div>
+
+      <div class="footer-col">
+        <h4>Services</h4>
+        <ul>
+          <li><a href="#services">Poster Design</a></li>
+          <li><a href="#services">Social Media Post Design</a></li>
+          <li><a href="#services">Meta Ads Management</a></li>
+          <li><a href="#services">Google Ads Management</a></li>
+          <li><a href="#services">Branding &amp; Marketing Creatives</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="#hero">Home</a></li>
+          <li><a href="#services">Services</a></li>
+          <li><a href="#portfolio">Portfolio</a></li>
+          <li><a href="#testimonials">Testimonials</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Subscribe</h4>
+        <form class="subscribe-row" id="subscribeForm">
+          <input type="email" placeholder="Email" aria-label="Email address" required>
+          <button type="submit" aria-label="Subscribe">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+          </button>
+        </form>
+        <p class="footer-bottom">Copyright &copy; J3 Creation. All rights reserved.</p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  "use strict";
+
+  /* ---------- Mobile nav toggle ---------- */
+  var navToggle = document.getElementById('navToggle');
+  var mobileMenu = document.getElementById('mobileMenu');
+  navToggle.addEventListener('click', function(){
+    var isOpen = mobileMenu.classList.toggle('open');
+    navToggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+  });
+  mobileMenu.querySelectorAll('a').forEach(function(link){
+    link.addEventListener('click', function(){
+      mobileMenu.classList.remove('open');
+      navToggle.setAttribute('aria-expanded', 'false');
+    });
+  });
+
+  /* ---------- FAQ accordion ---------- */
+  document.querySelectorAll('.faq-item').forEach(function(item){
+    var question = item.querySelector('.faq-question');
+    var answer = item.querySelector('.faq-answer');
+    question.addEventListener('click', function(){
+      var isOpen = item.classList.contains('open');
+
+      document.querySelectorAll('.faq-item.open').forEach(function(openItem){
+        if (openItem !== item) {
+          openItem.classList.remove('open');
+          openItem.querySelector('.faq-question').setAttribute('aria-expanded', 'false');
+          openItem.querySelector('.faq-answer').style.maxHeight = null;
+        }
+      });
+
+      if (isOpen) {
+        item.classList.remove('open');
+        question.setAttribute('aria-expanded', 'false');
+        answer.style.maxHeight = null;
+      } else {
+        item.classList.add('open');
+        question.setAttribute('aria-expanded', 'true');
+        answer.style.maxHeight = answer.scrollHeight + 'px';
+      }
+    });
+  });
+
+  /* ---------- Lead form submission -> Google Apps Script ---------- */
+  var SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbzmDSX1DC5e2fUz27qUeREpwJBnRoJPFycvBbozHoB9kr8A0ycuoKXBqkx-RAuHgVt6/exec';
+
+  var form = document.getElementById('leadForm');
+  var submitBtn = document.getElementById('submitBtn');
+  var successMsg = document.getElementById('successMsg');
+  var errorMsg = document.getElementById('errorMsg');
+
+  function showSuccessMessage(){
+    errorMsg.classList.remove('show');
+    successMsg.classList.add('show');
+  }
+
+  function showErrorMessage(){
+    successMsg.classList.remove('show');
+    errorMsg.classList.add('show');
+  }
+
+  form.addEventListener('submit', function(e){
+    e.preventDefault();
+    successMsg.classList.remove('show');
+    errorMsg.classList.remove('show');
+
+    var name = document.getElementById('name').value.trim();
+    var phone = document.getElementById('phone').value.trim();
+    var location = document.getElementById('location').value.trim();
+    var service = document.getElementById('service').value.trim();
+    var message = document.getElementById('message').value.trim();
+
+    if (!name || !phone || !location || !service) {
+      showErrorMessage();
+      return;
+    }
+
+    submitBtn.disabled = true;
+    submitBtn.textContent = 'Sending...';
+
+    var params = new URLSearchParams({
+      name: name,
+      phone: phone,
+      location: location,
+      service: service,
+      message: message
+    });
+
+    var url = SCRIPT_URL + "?" + params.toString();
+
+    fetch(url, {
+      method: "GET",
+      mode: "no-cors"
+    })
+    .then(function(){
+      showSuccessMessage();
+      form.reset();
+    })
+    .catch(function(){
+      showErrorMessage();
+    })
+    .finally(function(){
+      submitBtn.disabled = false;
+      submitBtn.textContent = 'Get My Free Consultation';
+    });
+  });
+
+  /* ---------- Subscribe form (footer) — decorative, no backend specified ---------- */
+  var subscribeForm = document.getElementById('subscribeForm');
+  subscribeForm.addEventListener('submit', function(e){
+    e.preventDefault();
+    var input = subscribeForm.querySelector('input');
+    if (input.value.trim()) {
+      input.value = '';
+      input.placeholder = 'Subscribed!';
+      setTimeout(function(){ input.placeholder = 'Email'; }, 2500);
+    }
+  });
+})();
+</script>
+</body>
+</html>
